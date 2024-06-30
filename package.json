@@ -1,19 +1,24 @@
 {
-  "name": "serverless-scraper",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "lucasbernardol",
-  "license": "ISC",
-  "description": "Serverless & scraper functions",
-  "devDependencies": {
-    "@types/node": "^20.14.9",
-    "nodemon": "^3.1.4",
-    "prettier": "^3.3.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.2"
-  }
+	"name": "serverless-scraper",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon src/index.ts"
+	},
+	"keywords": [],
+	"author": "lucasbernardol",
+	"license": "ISC",
+	"description": "Serverless & scraper functions",
+	"devDependencies": {
+		"@types/node": "^20.14.9",
+		"nodemon": "^3.1.4",
+		"prettier": "^3.3.2",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.5.2"
+	},
+	"dependencies": {
+		"@hono/node-server": "^1.11.4",
+		"dotenv": "^16.4.5",
+		"hono": "^4.4.10"
+	}
 }
