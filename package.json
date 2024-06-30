@@ -8,5 +8,8 @@
   "keywords": [],
   "author": "lucasbernardol",
   "license": "ISC",
-  "description": "Serverless & scraper functions"
+  "description": "Serverless & scraper functions",
+  "devDependencies": {
+    "prettier": "^3.3.2"
+  }
 }
