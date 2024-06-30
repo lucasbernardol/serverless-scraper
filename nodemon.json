@@ -1,0 +1,12 @@
+{
+	"ext": "ts,js,json",
+	"verbose": false,
+	"restartable": "rs",
+	"ignore": ["node_modules/**/node_modules", ".git"],
+	"execMap": {
+		"ts": "ts-node --transpileOnly"
+	},
+	"env": {
+		"NODE_ENV": "development"
+	}
+}
