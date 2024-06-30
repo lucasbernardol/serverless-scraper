@@ -12,7 +12,6 @@ import { zValidator, Hook } from '@hono/zod-validator';
 import { z } from 'zod';
 
 import { StatusCodes, getReasonPhrase } from 'http-status-codes';
-
 import scraper from 'metadata-scraper';
 
 const options: HonoOptions<{}> = {
@@ -22,7 +21,8 @@ const options: HonoOptions<{}> = {
 const zodValidationHook: Hook<{}, any, any> = (exception, ctx) => {
 	if (!exception.success) {
 		throw new HTTPException(StatusCodes.BAD_REQUEST, {
-			message: exception.error.errors[0].message,
+			message: `${exception.error.errors[0].message}`,
+			cause: exception,
 		});
 	}
 };
@@ -77,6 +77,7 @@ app.notFound(async (ctx) => {
 });
 
 app.onError(async (error, ctx) => {
+	console.log(error);
 	if (error instanceof HTTPException) {
 		return ctx.json(
 			{
@@ -89,8 +90,6 @@ app.onError(async (error, ctx) => {
 			error.status,
 		);
 	}
-
-	console.log(error);
 
 	return ctx.json(
 		{
